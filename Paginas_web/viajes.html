@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mundo Viajes</title>
+        <meta name="description" content="Mundo Viajes: destinos populares, promociones y reserva de pasajes online.">
+        <link rel="stylesheet" href="../deco_viajes.css">
+        <script src="../viajes_flask.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="../fotos_pagina_web/logotipo_viaje.png" alt="Mundo Viajes Logo" class="logo-img">
+                    <h1 class="logo-text">Mundo Viajes</h1>
+                </div>
+                <nav aria-label="Principal">
+                    <a href="#Inicio">Inicio</a>
+                    <a href="#Destinos">Destinos</a>
+                    <a href="#Promociones">Promociones</a>
+                    <a href="#Reservas">Reservas</a>
+                    <a href="#Contacto">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="Inicio">
+                <div class="hero">
+                    <h1>Descubre el mundo con nosotros</h1>
+                    <p>Tu próxima aventura comienza aquí</p>
+                </div>
+            </section>
+
+            <section id="Destinos">
+                <h2>Destinos Populares</h2>
+                <div class="destinos-container">
+                    <article class="destino-card">
+                        <img src="../fotos_pagina_web/brasil.jpg" alt="Copacabana - Brasil" class="destino-img">
+                        <div class="destino-info">
+                            <h3>Copacabana, Brasil</h3>
+                            <p>Descubre la famosa playa de Copacabana en Río de Janeiro, conocida mundialmente por sus 4 kilómetros de arena dorada y aguas cristalinas. Disfruta del vibrante ambiente carioca, practica deportes acuáticos, relájate bajo el sol tropical y experimenta la auténtica cultura brasileña. Con su icónico paseo marítimo, la famosa estatua del Cristo Redentor a la vista y una vida nocturna inigualable, Copacabana te ofrece todo lo que necesitas para unas vacaciones inolvidables en el paraíso tropical.</p>
+                        </div>
+                    </article>
+
+                    <article class="destino-card">
+                        <img src="../fotos_pagina_web/machupichu.jpg" alt="Machu Picchu - Perú" class="destino-img">
+                        <div class="destino-info">
+                            <h3>Machu Picchu, Perú</h3>
+                            <p>Adéntrate en las misteriosas ruinas de Machu Picchu, la ciudad perdida de los Incas declarada Patrimonio de la Humanidad por la UNESCO. Situada en lo alto de los Andes peruanos, esta maravilla arquitectónica te transportará a una época antigua mientras exploras sus templos, terrazas agrícolas y estructuras ceremoniales. El sendero Inca te ofrece una experiencia de trekking única con vistas espectaculares de montañas, nubes y selva. Conecta con la historia y la espiritualidad en uno de los destinos más fascinantes del mundo.</p>
+                        </div>
+                    </article>
+
+                    <article class="destino-card">
+                        <img src="../fotos_pagina_web/paris.jpg" alt="París - Francia" class="destino-img">
+                        <div class="destino-info">
+                            <h3>París, Francia</h3>
+                            <p>Sumérgete en la ciudad del amor, conocida por su elegancia, historia y cultura incomparable. Camina por las avenidas iluminadas del Champs-Élysées, admira la majestuosidad de la Torre Eiffel, explora el Louvre y sus tesoros artísticos, y disfruta de la renombrada gastronomía francesa en sus bistrós cafeterías. Visita la catedral de Notre Dame, pasea por el barrio de Montmartre, y vive la vida nocturna parisina. París combina lo clásico y lo moderno en una experiencia urbana que te dejará enamorado de esta ciudad eterna.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="Promociones">
+                <h2>Promoción del Mes</h2>
+                <div class="promocion-card">
+                    <h3>Oferta Especial: 20% de descuento en paquetes a destinos tropicales</h3>
+                    <p>Reserva antes del fin de mes y obtén un descuento exclusivo en todos nuestros paquetes a destinos de playa. Incluye alojamiento 5 estrellas, desayuno y excursiones guiadas. No pierdas esta oportunidad de vivir tus vacaciones soñadas a un precio increíble.</p>
+                    <p class="promo-precio">Desde $1.500 USD por persona</p>
+                </div>
+            </section>
+
+            <section id="Reservas">
+                <h2>Reserva tu Pasaje</h2>
+                <div class="reserva-card">
+                    <form id="reservaForm">
+                        <label>
+                            <span>Destino</span>
+                            <select name="destino" required>
+                                <option value="" disabled selected>Selecciona un destino</option>
+                                <option value="copacabana">Copacabana, Brasil</option>
+                                <option value="machu_picchu">Machu Picchu, Perú</option>
+                                <option value="paris">París, Francia</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Cantidad de pasajes</span>
+                            <div class="cantidad-pasajes">
+                                <button type="button" class="menos" aria-label="Quitar un pasaje">−</button>
+                                <span class="numero" aria-live="polite">1</span>
+                                <button type="button" class="mas" aria-label="Agregar un pasaje">+</button>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Fecha del viaje</span>
+                            <input type="date" name="fecha" required>
+                        </label>
+                        <label>
+                            <span>Horario de salida</span>
+                            <select name="hora" required>
+                                <option value="" disabled selected>Selecciona un horario</option>
+                                <option value="06:00">06:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Nombre completo</span>
+                            <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="tu@email.com" required>
+                        </label>
+                        <label>
+                            <span>Teléfono</span>
+                            <input type="tel" name="telefono" placeholder="11 2345 6789" required>
+                        </label>
+                        <div class="total-box">
+                            <p>Total: $<span id="total">1500</span> USD</p>
+                        </div>
+                        <button type="submit" class="reservar-btn">Reservar Pasaje</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer id="Contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-info">
+                <p>Email: info@mundoviajes.com</p>
+                <div class="redes-sociales">
+                    <p>Síguenos en:</p>
+                    <p>Instagram: @mundoviajes</p>
+                    <p>Facebook: Mundo Viajes</p>
+                    <p>Twitter: @mundoviajes</p>
+                </div>
+            </div>
+            <div class="contacto-form">
+                <h3>Envíanos un mensaje</h3>
+                <form id="contactoForm">
+                    <label>
+                        <span>Nombre</span>
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="tu@email.com" required>
+                    </label>
+                    <label>
+                        <span>Mensaje</span>
+                        <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+                    </label>
+                    <button type="submit" class="enviar-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TecnoStore</title>
+        <meta name="description" content="TecnoStore: notebooks, celulares, auriculares y accesorios con la mejor tecnología al mejor precio.">
+        <link rel="stylesheet" href="../deco_tecno.css">
+        <script>
+            (function () {
+                var tema = localStorage.getItem('tema');
+                if (tema !== 'claro') {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+        </script>
+        <script src="../tecno_flask.js" defer></script>
+    </head>
+    <body>
+        <header id="encabezado">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="../fotos_pagina_web/logotipo_tecno.png" alt="TecnoStore Logo" class="logo-img">
+                    <h1 class="logo-text">TecnoStore</h1>
+                </div>
+                <nav aria-label="Principal">
+                    <a href="#Inicio">Inicio</a>
+                    <a href="#Productos">Productos</a>
+                    <a href="#Ofertas">Ofertas</a>
+                    <a href="#Compra">Compra</a>
+                    <a href="#Contacto">Contacto</a>
+                </nav>
+                <div class="header-acciones">
+                    <button type="button" class="btn-icono" id="btnTema" aria-label="Cambiar tema">
+                        <svg class="icono icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                        <svg class="icono icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
+                    <button type="button" class="btn-icono btn-menu" id="btnMenu" aria-expanded="false" aria-controls="menuMovil" aria-label="Abrir menú">
+                        <svg class="icono icono-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg class="icono icono-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-movil" id="menuMovil" inert>
+                <ul>
+                    <li><a href="#Inicio">Inicio <span>01</span></a></li>
+                    <li><a href="#Productos">Productos <span>02</span></a></li>
+                    <li><a href="#Ofertas">Ofertas <span>03</span></a></li>
+                    <li><a href="#Compra">Compra <span>04</span></a></li>
+                    <li><a href="#Contacto">Contacto <span>05</span></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <section id="Inicio">
+                <div class="hero">
+                    <div class="hero-grid" aria-hidden="true"></div>
+                    <div class="hero-brillo" aria-hidden="true"></div>
+                    <div class="hero-contenido">
+                        <p class="badge">
+                            <span class="pulso" aria-hidden="true"></span>
+                            Envíos a todo el país
+                        </p>
+                        <h1>Tecnología de vanguardia</h1>
+                        <p class="hero-texto">Los mejores productos tecnológicos al mejor precio</p>
+                        <div class="hero-botones">
+                            <a href="#Productos" class="btn btn-primario">Ver productos</a>
+                            <a href="#Compra" class="btn btn-borde">Comprar ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Productos">
+                <div class="encabezado-seccion">
+                    <p class="eyebrow"><span>01</span> Productos</p>
+                    <h2>Nuestros Productos</h2>
+                </div>
+                <div class="productos-grid">
+                    <article class="producto-card">
+                        <img src="../fotos_pagina_web/notebook.webp" alt="Notebook" class="producto-img">
+                        <div class="producto-info">
+                            <h3>Notebook HP Pavilion</h3>
+                            <p>Procesador Intel Core i7, 16GB RAM, 512GB SSD, pantalla 15.6" Full HD. Ideal para trabajo y gaming.</p>
+                            <p class="precio">$1.200.000</p>
+                        </div>
+                    </article>
+
+                    <article class="producto-card">
+                        <img src="../fotos_pagina_web/celiu.webp" alt="Celular" class="producto-img">
+                        <div class="producto-info">
+                            <h3>Samsung Galaxy S24</h3>
+                            <p>Pantalla AMOLED 6.8", 256GB de almacenamiento, cámara 200MP, batería 5000mAh. La última tecnología en tu bolsillo.</p>
+                            <p class="precio">$900.000</p>
+                        </div>
+                    </article>
+
+                    <article class="producto-card">
+                        <img src="../fotos_pagina_web/auris.webp" alt="Auriculares" class="producto-img">
+                        <div class="producto-info">
+                            <h3>Sony WH-1000XM5</h3>
+                            <p>Auriculares con cancelación de ruido, 30 horas de batería, sonido Hi-Res. Comodidad y calidad premium.</p>
+                            <p class="precio">$350.000</p>
+                        </div>
+                    </article>
+
+                    <article class="producto-card">
+                        <img src="../fotos_pagina_web/teclado.webp" alt="Teclado" class="producto-img">
+                        <div class="producto-info">
+                            <h3>Logitech MX Keys</h3>
+                            <p>Teclado inalámbrico mecánico, retroiluminación, batería recargable, compatibilidad multi-dispositivo.</p>
+                            <p class="precio">$180.000</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="Ofertas">
+                <div class="encabezado-seccion">
+                    <p class="eyebrow"><span>02</span> Ofertas</p>
+                    <h2>Oferta Especial</h2>
+                </div>
+                <div class="oferta-card">
+                    <img src="../fotos_pagina_web/oferta.webp" alt="Oferta Especial" class="oferta-img">
+                    <div class="oferta-info">
+                        <h3>Apple MacBook Pro M3</h3>
+                        <p>Chip M3 Pro, 18GB RAM, 512GB SSD, pantalla Liquid Retina XDR 14". Potencia y rendimiento profesional.</p>
+                        <p class="precio-original">$2.500.000</p>
+                        <p class="precio-oferta">$1.999.999</p>
+                        <p class="descuento">¡20% DE DESCUENTO!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Compra">
+                <div class="encabezado-seccion">
+                    <p class="eyebrow"><span>03</span> Compra</p>
+                    <h2>Realizar Compra</h2>
+                </div>
+                <div class="compra-container">
+                    <div class="productos-lista">
+                        <p class="section-number">01 — SELECCIONA PRODUCTOS</p>
+                        <div class="producto-item" data-precio="1200000">
+                            <img src="../fotos_pagina_web/notebook.webp" alt="Notebook" class="prod-img">
+                            <div class="prod-info">
+                                <h3>Notebook HP Pavilion</h3>
+                                <p class="prod-precio">$1.200.000</p>
+                            </div>
+                            <div class="prod-cantidad">
+                                <button type="button" class="btn-menos" aria-label="Quitar una unidad">−</button>
+                                <span class="cant-numero">0</span>
+                                <button type="button" class="btn-mas" aria-label="Agregar una unidad">+</button>
+                            </div>
+                            <p class="prod-subtotal">$0</p>
+                        </div>
+
+                        <div class="producto-item" data-precio="900000">
+                            <img src="../fotos_pagina_web/celiu.webp" alt="Celular" class="prod-img">
+                            <div class="prod-info">
+                                <h3>Samsung Galaxy S24</h3>
+                                <p class="prod-precio">$900.000</p>
+                            </div>
+                            <div class="prod-cantidad">
+                                <button type="button" class="btn-menos" aria-label="Quitar una unidad">−</button>
+                                <span class="cant-numero">0</span>
+                                <button type="button" class="btn-mas" aria-label="Agregar una unidad">+</button>
+                            </div>
+                            <p class="prod-subtotal">$0</p>
+                        </div>
+
+                        <div class="producto-item" data-precio="350000">
+                            <img src="../fotos_pagina_web/auris.webp" alt="Auriculares" class="prod-img">
+                            <div class="prod-info">
+                                <h3>Sony WH-1000XM5</h3>
+                                <p class="prod-precio">$350.000</p>
+                            </div>
+                            <div class="prod-cantidad">
+                                <button type="button" class="btn-menos" aria-label="Quitar una unidad">−</button>
+                                <span class="cant-numero">0</span>
+                                <button type="button" class="btn-mas" aria-label="Agregar una unidad">+</button>
+                            </div>
+                            <p class="prod-subtotal">$0</p>
+                        </div>
+
+                        <div class="producto-item" data-precio="180000">
+                            <img src="../fotos_pagina_web/teclado.webp" alt="Teclado" class="prod-img">
+                            <div class="prod-info">
+                                <h3>Logitech MX Keys</h3>
+                                <p class="prod-precio">$180.000</p>
+                            </div>
+                            <div class="prod-cantidad">
+                                <button type="button" class="btn-menos" aria-label="Quitar una unidad">−</button>
+                                <span class="cant-numero">0</span>
+                                <button type="button" class="btn-mas" aria-label="Agregar una unidad">+</button>
+                            </div>
+                            <p class="prod-subtotal">$0</p>
+                        </div>
+
+                        <div class="producto-item oferta-especial" data-precio="1999999">
+                            <img src="../fotos_pagina_web/oferta.webp" alt="MacBook Pro" class="prod-img">
+                            <div class="prod-info">
+                                <h3>Apple MacBook Pro M3</h3>
+                                <p class="prod-precio-oferta">$1.999.999</p>
+                                <p class="prod-descuento">¡20% OFF!</p>
+                            </div>
+                            <div class="prod-cantidad">
+                                <button type="button" class="btn-menos" aria-label="Quitar una unidad">−</button>
+                                <span class="cant-numero">0</span>
+                                <button type="button" class="btn-mas" aria-label="Agregar una unidad">+</button>
+                            </div>
+                            <p class="prod-subtotal">$0</p>
+                        </div>
+                    </div>
+
+                    <div class="ordenar-box">
+                        <label>
+                            <span>Ordenar por:</span>
+                            <select id="ordenar">
+                                <option value="default">Predeterminado</option>
+                                <option value="precio-asc">Precio: Menor a Mayor</option>
+                                <option value="precio-desc">Precio: Mayor a Menor</option>
+                                <option value="nombre">Nombre (A-Z)</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="total-box">
+                        <p class="total">Total: $<span id="total">0</span></p>
+                    </div>
+
+                    <div class="datos-cliente">
+                        <p class="section-number">02 — TUS DATOS</p>
+                        <label>
+                            <span>Nombre y apellido</span>
+                            <input type="text" name="name" placeholder="Ej. Juan Pérez" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="juan@email.com" autocomplete="email" required>
+                        </label>
+                        <label>
+                            <span>Teléfono</span>
+                            <input type="tel" name="phone" placeholder="11 2345 6789" autocomplete="tel" required>
+                        </label>
+                        <label>
+                            <span>Dirección de entrega</span>
+                            <input type="text" name="direccion" placeholder="Calle 123, Ciudad" autocomplete="street-address" required>
+                        </label>
+                    </div>
+
+                    <button type="button" id="btnConfirmar" class="btn-confirmar" disabled>CONFIRMAR COMPRA</button>
+                    <p id="aviso" class="aviso">Agregá al menos un producto para continuar.</p>
+                    <div id="confirmacion" class="confirmacion" role="status" style="display: none;">
+                        ¡Compra realizada con éxito! Te contactaremos para coordinar la entrega.
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="Contacto">
+            <div class="footer-contenido">
+                <div class="encabezado-seccion">
+                    <p class="eyebrow"><span>04</span> Contacto</p>
+                    <h2>Contacto</h2>
+                </div>
+                <div class="contacto-info">
+                    <p><span>Horarios</span>Lunes a Viernes 09:00 - 20:00</p>
+                    <p><span>Sábados</span>10:00 - 18:00</p>
+                    <p><span>Ubicación</span>Av. Tecnología 123, Ciudad Digital</p>
+                    <p><span>Teléfono</span>555-TECNO</p>
+                    <p><span>Email</span>ventas@tecnostore.com</p>
+                </div>
+                <p class="footer-copy">© <span id="anio"></span> TecnoStore. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+</html>

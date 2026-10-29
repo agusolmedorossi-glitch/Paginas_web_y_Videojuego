@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 100px;
+}
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                url('C:/Users/aguso/OneDrive/Documentos/cosas del colegio/PROGRAMACION_6TOA_AGUSTIN_OLMEDO/fotos_pagina_web/fondo3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1a1a2e;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    transition: background-image 1s ease-in-out;
+}
+
+header {
+    background: linear-gradient(135deg, #0052a3 0%, #0066cc 100%);
+    padding: 18px 35px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.logo-container:hover .logo-img {
+    transform: rotate(-6deg) scale(1.08);
+}
+
+.logo-text {
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-size: 3.2em;
+    color: #0052a3;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.4em;
+    color: #0066cc;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- Inicio ---------- */
+
+.hero {
+    background: linear-gradient(135deg, #0052a3 0%, #0066cc 100%);
+    padding: 85px 45px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0, 82, 163, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: entrar 0.8s ease both;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    transform: skewX(-20deg);
+    animation: barrido 5s ease-in-out 1s infinite;
+    pointer-events: none;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero p {
+    font-size: 1.4em;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes barrido {
+    0%   { left: -60%; }
+    40%, 100% { left: 130%; }
+}
+
+/* ---------- Animación de aparición al hacer scroll ---------- */
+
+.aparecer {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.destino-card.aparecer:nth-child(odd) {
+    transform: translateX(-50px);
+}
+
+.destino-card.aparecer:nth-child(even) {
+    transform: translateX(50px);
+}
+
+.aparecer.visible,
+.destino-card.aparecer.visible:nth-child(n) {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Destinos ---------- */
+
+.destinos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.destino-card {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.destino-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(90deg, #ff6b35, #ff8c42);
+    transition: width 0.5s ease;
+    z-index: 2;
+}
+
+.destino-card:hover,
+.destino-card.aparecer.visible:nth-child(n):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 82, 163, 0.18);
+    border-color: #b7d3f0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.destino-card:hover::before {
+    width: 100%;
+}
+
+.destino-img {
+    width: 45%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.destino-card:hover .destino-img {
+    transform: scale(1.06);
+}
+
+.destino-info {
+    padding: 35px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.destino-info h3 {
+    color: #0052a3;
+    text-align: left;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.destino-card:hover .destino-info h3 {
+    color: #ff6b35;
+    transform: translateX(6px);
+}
+
+.destino-info p {
+    color: #5a6c7d;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.8;
+}
+
+/* ---------- Promociones ---------- */
+
+.promocion-card {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    padding: 55px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.promocion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.9s ease;
+    pointer-events: none;
+}
+
+.promocion-card.visible:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 50px rgba(255, 107, 53, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.promocion-card:hover::before {
+    left: 130%;
+}
+
+.promocion-card h3 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.promocion-card p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.promo-precio {
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: inline-block;
+    animation: latido 2.8s ease-in-out infinite;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+}
+
+/* ---------- Reservas ---------- */
+
+.reserva-card {
+    background: white;
+    padding: 55px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.reserva-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #0052a3, #0066cc, #ff6b35);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease 0.3s;
+}
+
+.reserva-card.visible::before {
+    transform: scaleX(1);
+}
+
+.reserva-card label {
+    display: block;
+    margin: 25px 0;
+}
+
+.reserva-card span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #0052a3;
+    font-size: 1em;
+    letter-spacing: 0.3px;
+}
+
+.reserva-card select,
+.reserva-card input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.reserva-card select:focus,
+.reserva-card input:focus {
+    outline: none;
+    border-color: #0052a3;
+    box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+    background: white;
+}
+
+.cantidad-pasajes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cantidad-pasajes button {
+    background: #0052a3;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cantidad-pasajes button:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
+}
+
+.cantidad-pasajes button:active {
+    transform: scale(0.94);
+}
+
+.cantidad-pasajes .numero {
+    font-size: 24px;
+    font-weight: 500;
+    min-width: 40px;
+    text-align: center;
+    color: #0052a3;
+    margin-bottom: 0;
+}
+
+.total-box {
+    background: linear-gradient(135deg, #0052a3 0%, #0066cc 100%);
+    padding: 28px;
+    border-radius: 8px;
+    margin: 35px 0;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 82, 163, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.total-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 82, 163, 0.35);
+}
+
+.total-box p {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.total-box #total {
+    display: inline;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+
+.total-box #total.cambio {
+    animation: rebote 0.4s ease;
+}
+
+@keyframes rebote {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+.reservar-btn {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: white;
+    border: none;
+    padding: 16px 50px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.reservar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+}
+
+.reservar-btn:active {
+    transform: scale(0.98);
+}
+
+/* ---------- Pie de página ---------- */
+
+footer {
+    background: linear-gradient(135deg, #0052a3 0%, #0066cc 100%);
+    padding: 60px 30px;
+    text-align: center;
+    color: white;
+    margin-top: 75px;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.05);
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.contacto-info p {
+    font-size: 1.15em;
+    margin: 15px 0;
+    color: white;
+}
+
+.redes-sociales {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contacto-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.contacto-form.visible:hover {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.contacto-form h3 {
+    color: #0052a3;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.contacto-form label {
+    display: block;
+    margin: 20px 0;
+}
+
+.contacto-form span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #0052a3;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background: white;
+    color: #2c3e50;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: #0052a3;
+    box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+}
+
+.enviar-btn {
+    background: #0052a3;
+    color: white;
+    border: none;
+    padding: 14px 45px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 82, 163, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.enviar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 82, 163, 0.35);
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        justify-content: center;
+    }
+
+    .destino-card {
+        flex-direction: column;
+    }
+
+    .destino-card.aparecer:nth-child(odd),
+    .destino-card.aparecer:nth-child(even) {
+        transform: translateY(40px);
+    }
+
+    .destino-img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .destino-info {
+        width: 100%;
+    }
+
+    .promocion-card,
+    .reserva-card {
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.9em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .aparecer {
+        opacity: 1;
+        transform: none;
+    }
+}

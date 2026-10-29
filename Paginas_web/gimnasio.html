@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POWERFIT — Gimnasio de musculación, crossfit y yoga</title>
+  <meta name="description" content="POWERFIT: clases de musculación, crossfit y yoga con entrenadores certificados. Mirá los horarios y reservá tu clase online." />
+  <meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../deco_gym.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <script src="../gym_flask.js" defer></script>
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav" aria-label="Principal">
+      <a href="#inicio" class="brand" data-close-menu>
+        <span class="brand-mark">PF</span>
+        <span class="brand-name">POWERFIT</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#clases">Clases</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#entrenadores">Entrenadores</a></li>
+        <li><a href="#reservar">Reservar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Cambiar tema">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <a href="#reservar" class="btn btn-primary btn-sm hide-mobile">Reservar clase</a>
+        <button type="button" class="icon-btn show-mobile" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" inert>
+      <ul>
+        <li><a href="#clases" data-close-menu>Clases <span>01</span></a></li>
+        <li><a href="#horarios" data-close-menu>Horarios <span>02</span></a></li>
+        <li><a href="#entrenadores" data-close-menu>Entrenadores <span>03</span></a></li>
+        <li><a href="#reservar" data-close-menu>Reservar <span>04</span></a></li>
+        <li><a href="#contacto" data-close-menu>Contacto <span>05</span></a></li>
+        <li class="mobile-cta"><a href="#reservar" class="btn btn-primary btn-block" data-close-menu>Reservar clase</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- INICIO -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <p class="badge fade-up">
+          <span class="pulse" aria-hidden="true"></span>
+          Abierto los 7 días de la semana
+        </p>
+
+        <h1 id="hero-title" class="hero-title fade-up" style="--d: 100ms">
+          <span class="muted">Bienvenido a</span>
+          <span>POWERFIT</span>
+        </h1>
+
+        <div class="hero-grid">
+          <div class="hero-copy fade-up" style="--d: 200ms">
+            <p class="mono accent">// Musculación · Crossfit · Yoga</p>
+            <p class="hero-desc">Entrená con equipamiento profesional y entrenadores certificados. Elegí tu clase, tu día y tu horario, y reservá en menos de un minuto.</p>
+            <p class="location">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Av. Siempre Alegría 123, Ciudad Pisos Picados
+            </p>
+            <div class="hero-ctas">
+              <a href="#reservar" class="btn btn-primary btn-lg">
+                Reservar clase
+                <svg class="icon nudge-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </a>
+              <a href="#horarios" class="btn btn-outline btn-lg">
+                Ver horarios
+                <svg class="icon nudge-diag" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <ul class="hero-socials fade-up" style="--d: 300ms" aria-label="Redes sociales">
+            <li><a class="icon-btn icon-btn-lg" href="#contacto" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a></li>
+            <li><a class="icon-btn icon-btn-lg" href="#contacto" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+            <li><a class="icon-btn icon-btn-lg" href="mailto:info@powerfit.com" aria-label="Correo"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 CLASES -->
+    <section id="clases" class="section container" aria-labelledby="clases-title">
+      <header class="section-heading reveal">
+        <p class="eyebrow"><span>01</span> Clases</p>
+        <h2 id="clases-title">Nuestras clases, pensadas para cada objetivo.</h2>
+        <p class="section-desc">Fuerza, intensidad o bienestar: elegí la disciplina que mejor va con vos.</p>
+      </header>
+
+      <div class="cards-grid">
+        <article class="media-card reveal">
+          <div class="media-card-img"><img src="../fotos_pagina_web/musculacion.webp" alt="Sala de musculación con equipamiento profesional" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Fuerza</span>
+            <h3>Musculación</h3>
+            <p>Entrenamiento de fuerza y desarrollo muscular con equipamiento profesional.</p>
+          </div>
+        </article>
+
+        <article class="media-card reveal" style="--d: 80ms">
+          <div class="media-card-img"><img src="../fotos_pagina_web/crossfit.webp" alt="Clase de crossfit" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Intensidad</span>
+            <h3>Crossfit</h3>
+            <p>Entrenamiento funcional de alta intensidad para superar tus límites.</p>
+          </div>
+        </article>
+
+        <article class="media-card reveal" style="--d: 160ms">
+          <div class="media-card-img"><img src="../fotos_pagina_web/yoga.webp" alt="Clase de yoga" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Bienestar</span>
+            <h3>Yoga</h3>
+            <p>Práctica de posturas y respiración para el bienestar físico y mental.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 02 HORARIOS -->
+    <section id="horarios" class="section-band" aria-labelledby="horarios-title">
+      <div class="section container">
+        <header class="section-heading reveal">
+          <p class="eyebrow"><span>02</span> Horarios</p>
+          <h2 id="horarios-title">Horarios de clases, de lunes a domingo.</h2>
+        </header>
+
+        <ol class="schedule">
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Lunes</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>08:00 – 22:00</span></li>
+              <li class="tag-yoga">Yoga <span>18:00 – 19:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Martes</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>14:00 – 22:00</span></li>
+              <li class="tag-crossfit">Crossfit <span>16:00 – 17:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Miércoles</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>08:00 – 20:00</span></li>
+              <li class="tag-yoga">Yoga <span>10:00 – 11:30</span></li>
+              <li class="tag-crossfit">Crossfit <span>18:00 – 19:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Jueves</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>08:00 – 22:00</span></li>
+              <li class="tag-crossfit">Crossfit <span>09:00 – 10:30</span></li>
+              <li class="tag-yoga">Yoga <span>19:00 – 20:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Viernes</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>08:00 – 21:00</span></li>
+              <li class="tag-crossfit">Crossfit <span>17:00 – 18:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Sábado</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>09:00 – 18:00</span></li>
+              <li class="tag-yoga">Yoga <span>10:00 – 11:30</span></li>
+              <li class="tag-crossfit">Crossfit <span>11:00 – 12:30</span></li>
+            </ul>
+          </li>
+          <li class="schedule-row reveal">
+            <p class="schedule-day">Domingo</p>
+            <ul class="schedule-tags">
+              <li class="tag-musculacion">Musculación <span>10:00 – 16:00</span></li>
+              <li class="tag-yoga">Yoga <span>11:00 – 12:30</span></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 03 ENTRENADORES -->
+    <section id="entrenadores" class="section container" aria-labelledby="entrenadores-title">
+      <header class="section-heading reveal">
+        <p class="eyebrow"><span>03</span> Entrenadores</p>
+        <h2 id="entrenadores-title">Un equipo que te acompaña en cada repetición.</h2>
+      </header>
+
+      <div class="cards-grid">
+        <article class="media-card reveal">
+          <div class="media-card-img"><img src="../fotos_pagina_web/profesor_musuculo.jpg" alt="Retrato de Carlos Martínez, entrenador de musculación" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Musculación</span>
+            <h3>Carlos Martínez</h3>
+            <p>Especialista en musculación con 10 años de experiencia.</p>
+          </div>
+        </article>
+
+        <article class="media-card reveal" style="--d: 80ms">
+          <div class="media-card-img"><img src="../fotos_pagina_web/profesora_crossfit.jpg" alt="Retrato de María López, entrenadora de crossfit" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Crossfit</span>
+            <h3>María López</h3>
+            <p>Entrenadora de Crossfit certificada, campeona regional.</p>
+          </div>
+        </article>
+
+        <article class="media-card reveal" style="--d: 160ms">
+          <div class="media-card-img"><img src="../fotos_pagina_web/profesor_yoga.jpg" alt="Retrato de Juan Pérez, instructor de yoga" loading="lazy" width="1200" height="800" /></div>
+          <div class="media-card-body">
+            <span class="type-badge">Yoga</span>
+            <h3>Juan Pérez</h3>
+            <p>Instructor de Yoga y meditación.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 RESERVAR -->
+    <section id="reservar" class="section-band" aria-labelledby="reservar-title">
+      <div class="section container">
+        <header class="section-heading reveal">
+          <p class="eyebrow"><span>04</span> Reservar</p>
+          <h2 id="reservar-title">Reservá tu clase en dos pasos.</h2>
+          <p class="section-desc">Al confirmar se descarga un archivo CSV con los datos de tu reserva.</p>
+        </header>
+
+        <form id="reservaForm" class="form booking" novalidate>
+          <div class="card card-lg reveal">
+            <p class="step-label">01 — Elegí tu clase</p>
+            <div class="field">
+              <label for="clase">Selecciona la clase</label>
+              <select id="clase" name="clase" aria-describedby="clase-error">
+                <option value="" disabled selected>Elegí una clase</option>
+                <option value="musculacion">Musculación</option>
+                <option value="crossfit">Crossfit</option>
+                <option value="yoga">Yoga</option>
+              </select>
+              <p class="field-error" id="clase-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="card card-lg reveal" style="--d: 80ms">
+            <p class="step-label">02 — Detalles de la reserva</p>
+            <div class="form">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Nombre y apellido</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Ej. Sofía García" aria-describedby="name-error" />
+                  <p class="field-error" id="name-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label for="phone">Teléfono</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="11 2345 6789" aria-describedby="phone-error" />
+                  <p class="field-error" id="phone-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="day">Día</label>
+                  <select id="day" name="day" aria-describedby="day-error">
+                    <option value="" disabled selected>Elegí un día</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                  </select>
+                  <p class="field-error" id="day-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label for="time">Horario</label>
+                  <select id="time" name="time" aria-describedby="time-error">
+                    <option value="" disabled selected>Elegí un horario</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                    <option value="22:00">22:00</option>
+                  </select>
+                  <p class="field-error" id="time-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="entrenador">Entrenador</label>
+                <select id="entrenador" name="entrenador" aria-describedby="entrenador-error">
+                  <option value="" disabled selected>Elegí un entrenador</option>
+                  <option value="Carlos Martínez" data-clase="musculacion">Carlos Martínez (Musculación)</option>
+                  <option value="María López" data-clase="crossfit">María López (Crossfit)</option>
+                  <option value="Juan Pérez" data-clase="yoga">Juan Pérez (Yoga)</option>
+                </select>
+                <p class="field-error" id="entrenador-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="note">Nota adicional (opcional)</label>
+                <textarea id="note" name="note" rows="3" placeholder="Ej. Tengo una lesión en el hombro"></textarea>
+              </div>
+
+              <div class="form-footer">
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                <button type="submit" class="btn btn-primary btn-lg nowrap">
+                  Reservar clase
+                  <svg class="icon nudge-diag" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 05 CONTACTO -->
+    <section id="contacto" class="section container" aria-labelledby="contacto-title">
+      <header class="section-heading reveal">
+        <p class="eyebrow"><span>05</span> Contacto</p>
+        <h2 id="contacto-title">Escribinos o pasá a conocernos.</h2>
+      </header>
+
+      <div class="contact-grid">
+        <div class="reveal">
+          <a href="mailto:info@powerfit.com" class="contact-email">info@powerfit.com</a>
+          <ul class="contact-list">
+            <li><span>Teléfono</span><a href="tel:+501234567890">123-456-7890</a></li>
+            <li><span>Instagram</span><p>Powerfit</p></li>
+            <li><span>Facebook</span><p>Powerfit</p></li>
+          </ul>
+        </div>
+
+        <div class="card card-lg reveal" style="--d: 120ms">
+          <h3 class="mono-label">Dónde encontrarnos</h3>
+          <p class="address">Av. Siempre Alegría 123,<br />Ciudad Pisos Picados</p>
+          <p class="muted address-note">Abrimos todos los días. Consultá los horarios de cada clase en la sección Horarios.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> POWERFIT. Todos los derechos reservados.</p>
+      <a href="#inicio" class="back-top">
+        Volver arriba
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

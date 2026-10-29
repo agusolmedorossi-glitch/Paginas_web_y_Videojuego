@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="El rincon del grano: café de calidad, métodos artesanales y repostería del día. Armá tu pedido online y retiralo en el local.">
+        <title>El rincon del grano</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../deco_cafe.css">
+    </head>
+    <body>
+        <nav id="navegacion">
+            <a href="#Inicio" class="marca">
+                <img src="../fotos_pagina_web/logotipo_cafe.png" alt="Logo">
+                <span class="logo-texto">El rincon del grano</span>
+            </a>
+            <div class="nav-links">
+                <a href="#Inicio">Inicio</a>
+                <a href="#Menu">Menu</a>
+                <a href="#pedido">Pedido</a>
+                <a href="#Nosotros">Nosotros</a>
+                <a href="#Contacto">Contacto</a>
+            </div>
+            <a href="#pedido" class="nav-cta">Pedí ahora</a>
+        </nav>
+
+        <header>
+            <p class="eyebrow">Café · Repostería · Pausas</p>
+            <h1>El sabor de <em>empezar bien</em></h1>
+            <p class="hero-texto">Granos seleccionados, métodos artesanales y medialunas recién horneadas. Armá tu pedido online y pasá a retirarlo.</p>
+            <div class="hero-botones">
+                <a href="#pedido" class="boton">Armá tu pedido</a>
+                <a href="#Menu" class="boton boton-secundario">Ver el menú</a>
+            </div>
+        </header>
+
+        <div>
+            <section id="Inicio">
+                <p class="eyebrow">Bienvenidos</p>
+                <h1>Inicio</h1>
+                <p>
+                    Bienvenidos a El rincon del grano. Somos un espacio pensado para los amantes del buen café y los momentos especiales.
+                    Ofrecemos granos de la más alta calidad, métodos de extracción artesanales y una variada opción de repostería y opciones saladas.
+                    Ya sea que busques un lugar tranquilo para trabajar, reunirte con amigos o disfrutar de un rato a solas, aquí siempre encontrarás una sonrisa y la taza perfecta esperándote.
+                </p>
+                <ul class="destacados">
+                    <li>
+                        <strong>Granos de calidad</strong>
+                        <span>Seleccionados de origen</span>
+                    </li>
+                    <li>
+                        <strong>Extracción artesanal</strong>
+                        <span>Cada taza, a su tiempo</span>
+                    </li>
+                    <li>
+                        <strong>Repostería del día</strong>
+                        <span>Dulce y salado</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="Menu">
+                <p class="eyebrow">Nuestra carta</p>
+                <h1>Menu</h1>
+                <div class="menu-grid">
+                    <article class="menu">
+                        <img src="../fotos_pagina_web/cafe.jpg" alt="Café">
+                        <div class="texto">
+                            <h3>Café</h3>
+                            <h2>Precio: $2800 arg</h2>
+                            <p>Una taza de café recién elaborado: el equilibrio perfecto entre un aroma profundo, notas tostadas y una calidez que reconforta desde el primer sorbo. La pausa ideal para renovar la energía y saborear el momento</p>
+                        </div>
+                    </article>
+                    <article class="menu">
+                        <img src="../fotos_pagina_web/caffe.jpg" alt="Capuchino">
+                        <div class="texto">
+                            <h3>Capuchino</h3>
+                            <h2>Precio: $4000 arg</h2>
+                            <p>El equilibrio perfecto entre la intensidad de un espresso recién extraído y la cremosidad de la leche al vapor. Coronado con una suave capa de espuma de terciopelo y un toque de cacao o canela, el capuchino es un clásico reconfortante en cada sorbo</p>
+                        </div>
+                    </article>
+                    <article class="menu">
+                        <img src="../fotos_pagina_web/medialunas.jpg" alt="Medialunas">
+                        <div class="texto">
+                            <h3>Medialunas</h3>
+                            <h2>Precio: $900 c/u arg</h2>
+                            <p>Masa hojaldrada, dorada al horno y pincelada con un suave almíbar. Crujientes por fuera y esponjosas por dentro, nuestras medialunas son el acompañamiento clásico e irresistible para tu café de todos los días</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="menu-cta">
+                    <a href="#pedido" class="boton">Quiero pedir</a>
+                </div>
+            </section>
+
+            <section id="pedido">
+                <p class="eyebrow">Pedido online</p>
+                <h2>Armá tu pedido</h2>
+
+                <form id="pedidoForm">
+                    <div class="productos-container">
+                        <p class="section-number">01 — ELEGÍ TUS PRODUCTOS</p>
+                        <div class="producto" data-precio="2800">
+                            <img src="../fotos_pagina_web/cafe.jpg" alt="Café" class="producto-img">
+                            <div class="info">
+                                <h3>Café</h3>
+                                <p>$2.800</p>
+                            </div>
+                            <div class="cantidad">
+                                <button type="button" class="menos" aria-label="Quitar un café">−</button>
+                                <span class="numero" aria-live="polite">0</span>
+                                <button type="button" class="mas" aria-label="Agregar un café">+</button>
+                            </div>
+                            <p class="subtotal">$0</p>
+                        </div>
+
+                        <div class="producto" data-precio="4000">
+                            <img src="../fotos_pagina_web/caffe.jpg" alt="Capuchino" class="producto-img">
+                            <div class="info">
+                                <h3>Capuchino</h3>
+                                <p>$4.000</p>
+                            </div>
+                            <div class="cantidad">
+                                <button type="button" class="menos" aria-label="Quitar un capuchino">−</button>
+                                <span class="numero" aria-live="polite">0</span>
+                                <button type="button" class="mas" aria-label="Agregar un capuchino">+</button>
+                            </div>
+                            <p class="subtotal">$0</p>
+                        </div>
+
+                        <div class="producto" data-precio="900">
+                            <img src="../fotos_pagina_web/medialunas.jpg" alt="Medialunas" class="producto-img">
+                            <div class="info">
+                                <h3>Medialunas</h3>
+                                <p>$900 c/u</p>
+                            </div>
+                            <div class="cantidad">
+                                <button type="button" class="menos" aria-label="Quitar una medialuna">−</button>
+                                <span class="numero" aria-live="polite">0</span>
+                                <button type="button" class="mas" aria-label="Agregar una medialuna">+</button>
+                            </div>
+                            <p class="subtotal">$0</p>
+                        </div>
+                    </div>
+
+                    <div class="total-box">
+                        <span class="total-label">Total del pedido</span>
+                        <p class="total">$<span id="total">0</span></p>
+                    </div>
+
+                    <div class="datos-cliente">
+                        <p class="section-number">02 — TUS DATOS</p>
+                        <label>
+                            <span>Nombre y apellido</span>
+                            <input type="text" name="name" placeholder="Ej. Sofía García" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span>Teléfono</span>
+                            <input type="tel" name="phone" placeholder="11 2345 6789" autocomplete="tel" required>
+                        </label>
+                        <div class="retiro">
+                            <label>
+                                <span>Día de retiro</span>
+                                <select name="day">
+                                    <option value="Hoy">Hoy</option>
+                                    <option value="Mañana">Mañana</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>Horario</span>
+                                <select name="time" required>
+                                    <option value="" disabled selected>Elegí un horario</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </label>
+                        </div>
+                        <label>
+                            <span>Nota para el pedido (opcional)</span>
+                            <textarea name="note" placeholder="Ej. Cappuccino con leche vegetal" rows="3"></textarea>
+                        </label>
+
+                        <div class="confirmar-box">
+                            <button type="submit" id="btnConfirmar" disabled>CONFIRMAR PEDIDO</button>
+                            <p id="aviso" class="aviso">Agregá al menos un producto para continuar.</p>
+                            <div id="confirmacion" class="confirmacion" role="status" style="display: none;">
+                                ¡Pedido recibido! Te contactaremos para confirmar el horario y el pago al retirar.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="terminos-condiciones">
+                    <p class="section-number">03 — TERMINOS Y CONDICIONES</p>
+                    <p class="terminos-texto">Al realizar una compra en nuestro sitio web, aceptas los siguientes términos y condiciones. Te pedimos que los leas antes de confirmar tu pedido.</p>
+                    <ul class="terminos-lista">
+                        <li>1. Datos del vendedor</li>
+                        <li>2. Productos y precios</li>
+                        <li>3. Cómo realizar un pedido</li>
+                        <li>4. Métodos de pago</li>
+                        <li>5. Entrega y retiro</li>
+                        <li>6. Productos perecederos</li>
+                        <li>7. Alergias y alimentos</li>
+                        <li>8. Cancelaciones y cambios</li>
+                        <li>9. Reclamos, devoluciones y reembolsos</li>
+                        <li>10. Derecho de arrepentimiento</li>
+                    </ul>
+                    <div class="terminos-botones">
+                        <button type="button" class="btn-terminos btn-aceptar">Aceptar</button>
+                        <button type="button" class="btn-terminos btn-rechazar">Rechazar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Nosotros">
+                <p class="eyebrow">Nuestra historia</p>
+                <h1>Nosotros</h1>
+                <blockquote>“Un espacio donde el tiempo se detenga y cada taza cuente una historia.”</blockquote>
+                <p>En el rincon del grano nacimos con una idea clara: crear un espacio donde el tiempo se detenga y cada taza cuente una historia. Seleccionamos cuidadosamente granos de origen y los acompañamos con repostería artesanal horneada todos los días. Más que un café, somos tu punto de encuentro, tu pausa merecida y el aroma que te hace sentir en casa.</p>
+            </section>
+
+            <section id="Contacto">
+                <p class="eyebrow">Hablemos</p>
+                <h1>Contacto</h1>
+                <footer>
+                    <p>Nuestras redes sociales</p>
+                    <ul>
+                        <li><span>Instagram</span>El_rincondel_grano</li>
+                        <li><span>Facebook</span>Elrincon.delgrano</li>
+                        <li><span>Correo electrónico</span>elrincondelgrano@gmail.com</li>
+                        <li><span>Nuestro número</span>+54 9 11 6110-9574</li>
+                    </ul>
+                </footer>
+            </section>
+        </div>
+
+        <p class="copy">© El rincon del grano — Hecho con café</p>
+
+        <script src="../cafe_flask.js"></script>
+    </body>
+</html>
